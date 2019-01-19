@@ -37,8 +37,8 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.bz2
-        sha256: 7bcc5caace97baa948931d712ea5f37038dbb1c5d89b43ad4def4ed7cb683332
+        url: https://dl.bintray.com/boostorg/release/1.69.0/source/boost_1_69_0.tar.bz2
+        sha256: 8f32d4617390d1c2d16f26a27ab60d97807b35440d45891fa340fc2648b04406
 
   - name: protobuf
     config-opts:
@@ -103,8 +103,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_7_0_0.tar.gz
-        sha256: 3ee97903882b5f58c88b6f9d2ce50fd1000be95479180c7b4681cd3f4c1c7629
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_0_0.tar.gz
+        sha256: 65e8b7ab068a91427f9ebbdd14ffee2ccfed34defd1902325c87a3eb16efbe6d
       - type: file
         path: patches/libcrypto++.pc
 
@@ -152,9 +152,9 @@ modules:
       - -Ddisable_gtkdoc=true
     sources:
       - type: git
-        branch: '1.14.4'
+        branch: '1.15.1'
         url: git://anongit.freedesktop.org/gstreamer/gstreamer
-        commit: 3c586dec930c5c253da0cf49e3f3846243f0ecf5
+        commit: 6ea4380230d1cca1d63196dfbd753af887b8b241
 
   - name: gst-plugins-base
     buildsystem: meson
@@ -163,9 +163,9 @@ modules:
       - -Ddisable_gtkdoc=true
     sources:
       - type: git
-        branch: '1.14.4'
+        branch: '1.15.1'
         url: git://anongit.freedesktop.org/gstreamer/gst-plugins-base
-        commit: 384ff7d0268c71e76f7328a9ca6dfe96e4a3ab23
+        commit: f65a05b27f9b2d9258a1f51e5b54f3b1902f061f
 
   - name: gst-plugins-good
     buildsystem: meson
@@ -174,9 +174,9 @@ modules:
       - -Ddisable_gtkdoc=true
     sources:
       - type: git
-        branch: '1.14.4'
+        branch: '1.15.1'
         url: git://anongit.freedesktop.org/gstreamer/gst-plugins-good
-        commit: d88d1b0e43b140587f35c7c9bf390fae051e427d
+        commit: e579614b1ac3178540b57921765a7b298990c3e4
 
   - name: gst-plugins-bad
     buildsystem: meson
@@ -185,9 +185,9 @@ modules:
       - -Ddisable_gtkdoc=true
     sources:
       - type: git
-        branch: '1.14.4'
+        branch: '1.15.1'
         url: git://anongit.freedesktop.org/gstreamer/gst-plugins-bad
-        commit: 566e4ecc223b18fce8bd932f5e4885f41f746dd4
+        commit: a60056c6b07f52a108d26032eb7feb943a8e3f99
 
   - name: gst-plugins-ugly
     buildsystem: meson
@@ -196,9 +196,9 @@ modules:
       - -Ddisable_gtkdoc=true
     sources:
       - type: git
-        branch: '1.14.4'
+        branch: '1.15.1'
         url: git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly
-        commit: e1bf2aa184f83ff9fd5b7850c460129100ac6d1a
+        commit: 2365d2b5d778e6b2ee57c4c960b4d10e85df8f34
 
   - name: clementine
     builddir: true
