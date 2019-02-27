@@ -33,7 +33,7 @@ modules:
     buildsystem: simple
     build-commands:
       - ./bootstrap.sh --prefix="${FLATPAK_DEST}"
-      - ./b2 headers
+      - ./b2 -j ${FLATPAK_BUILDER_N_JOBS} headers
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
@@ -51,19 +51,19 @@ modules:
     cleanup:
       - /bin
 
-  - name: fftw3
-    config-opts:
-      - --enable-shared
-      - --enable-float
-      - --enable-threads
-      - --enable-openmp
-      - --disable-fortran
-    sources:
-      - type: archive
-        url: http://fftw.org/fftw-3.3.8.tar.gz
-        md5: 8aac833c943d8e90d51b697b27d4384d
-    cleanup:
-      - /bin
+  # - name: fftw3
+  #   config-opts:
+  #     - --enable-shared
+  #     - --enable-float
+  #     - --enable-threads
+  #     - --enable-openmp
+  #     - --disable-fortran
+  #   sources:
+  #     - type: archive
+  #       url: http://fftw.org/fftw-3.3.8.tar.gz
+  #       md5: 8aac833c943d8e90d51b697b27d4384d
+  #   cleanup:
+  #     - /bin
 
   - name: chromaprint
     buildsystem: cmake-ninja
@@ -103,8 +103,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_0_0.tar.gz
-        sha256: 65e8b7ab068a91427f9ebbdd14ffee2ccfed34defd1902325c87a3eb16efbe6d
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_1_0.tar.gz
+        sha256: 8a4e4773a39b0c07d7cea1b8be7a3f7a9d126bd3ac9a9f072f82d3a53a474a87
       - type: file
         path: patches/libcrypto++.pc
 
@@ -145,60 +145,60 @@ modules:
         url: https://github.com/sparsehash/sparsehash/archive/sparsehash-2.0.3.tar.gz
         sha256: 05e986a5c7327796dad742182b2d10805a8d4f511ad090da0490f146c1ff7a8c
 
-  - name: gstreamer
-    buildsystem: meson
-    builddir: true
-    config-opts:
-      - -Ddisable_gtkdoc=true
-    sources:
-      - type: git
-        branch: '1.15.1'
-        url: git://anongit.freedesktop.org/gstreamer/gstreamer
-        commit: 6ea4380230d1cca1d63196dfbd753af887b8b241
+  # - name: gstreamer
+  #   buildsystem: meson
+  #   builddir: true
+  #   config-opts:
+  #     - -Ddisable_gtkdoc=true
+  #   sources:
+  #     - type: git
+  #       branch: '1.15.1'
+  #       url: git://anongit.freedesktop.org/gstreamer/gstreamer
+  #       commit: 6ea4380230d1cca1d63196dfbd753af887b8b241
 
-  - name: gst-plugins-base
-    buildsystem: meson
-    builddir: true
-    config-opts:
-      - -Ddisable_gtkdoc=true
-    sources:
-      - type: git
-        branch: '1.15.1'
-        url: git://anongit.freedesktop.org/gstreamer/gst-plugins-base
-        commit: f65a05b27f9b2d9258a1f51e5b54f3b1902f061f
+  # - name: gst-plugins-base
+  #   buildsystem: meson
+  #   builddir: true
+  #   config-opts:
+  #     - -Ddisable_gtkdoc=true
+  #   sources:
+  #     - type: git
+  #       branch: '1.15.1'
+  #       url: git://anongit.freedesktop.org/gstreamer/gst-plugins-base
+  #       commit: f65a05b27f9b2d9258a1f51e5b54f3b1902f061f
 
-  - name: gst-plugins-good
-    buildsystem: meson
-    builddir: true
-    config-opts:
-      - -Ddisable_gtkdoc=true
-    sources:
-      - type: git
-        branch: '1.15.1'
-        url: git://anongit.freedesktop.org/gstreamer/gst-plugins-good
-        commit: e579614b1ac3178540b57921765a7b298990c3e4
+  # - name: gst-plugins-good
+  #   buildsystem: meson
+  #   builddir: true
+  #   config-opts:
+  #     - -Ddisable_gtkdoc=true
+  #   sources:
+  #     - type: git
+  #       branch: '1.15.1'
+  #       url: git://anongit.freedesktop.org/gstreamer/gst-plugins-good
+  #       commit: e579614b1ac3178540b57921765a7b298990c3e4
 
-  - name: gst-plugins-bad
-    buildsystem: meson
-    builddir: true
-    config-opts:
-      - -Ddisable_gtkdoc=true
-    sources:
-      - type: git
-        branch: '1.15.1'
-        url: git://anongit.freedesktop.org/gstreamer/gst-plugins-bad
-        commit: a60056c6b07f52a108d26032eb7feb943a8e3f99
+  # - name: gst-plugins-bad
+  #   buildsystem: meson
+  #   builddir: true
+  #   config-opts:
+  #     - -Ddisable_gtkdoc=true
+  #   sources:
+  #     - type: git
+  #       branch: '1.15.1'
+  #       url: git://anongit.freedesktop.org/gstreamer/gst-plugins-bad
+  #       commit: a60056c6b07f52a108d26032eb7feb943a8e3f99
 
-  - name: gst-plugins-ugly
-    buildsystem: meson
-    builddir: true
-    config-opts:
-      - -Ddisable_gtkdoc=true
-    sources:
-      - type: git
-        branch: '1.15.1'
-        url: git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly
-        commit: 2365d2b5d778e6b2ee57c4c960b4d10e85df8f34
+  # - name: gst-plugins-ugly
+  #   buildsystem: meson
+  #   builddir: true
+  #   config-opts:
+  #     - -Ddisable_gtkdoc=true
+  #   sources:
+  #     - type: git
+  #       branch: '1.15.1'
+  #       url: git://anongit.freedesktop.org/gstreamer/gst-plugins-ugly
+  #       commit: 2365d2b5d778e6b2ee57c4c960b4d10e85df8f34
 
   - name: clementine
     builddir: true
@@ -221,6 +221,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
-        commit: d260c8b6d8c876280f8ac883870916bdf4b64df5
+        commit: 36cc5b82f4daf5c2d4e93dc8072665e5a3ca622b
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
