@@ -1,5 +1,5 @@
-<!-- Copyright 2019 Rebecca Wallander --> 
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Rebecca Wallander --> 
 <component type="desktop">
 	<id>org.clementine_player.Clementine</id>
 	<metadata_license>CC0-1.0</metadata_license>
