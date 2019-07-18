@@ -8,7 +8,7 @@ rename-icon: clementine
 # rename-appdata-file: clementine.appdata.xml # Enable once in upstream
 finish-args:
   - --share=ipc
-  - --socket=fallback-x11
+  - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
   - --device=dri
