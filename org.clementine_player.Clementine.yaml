@@ -14,7 +14,15 @@ finish-args:
   - --device=dri
   - --share=network
   - --filesystem=xdg-music
+  - --filesystem=/mnt
+  - --filesystem=/media
+  - --filesystem=/run/media
+  - --system-talk-name=org.freedesktop.Avahi
   - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.UDisks2
+  - --talk-name=org.gnome.SettingsDaemon.MediaKeys
+  - --talk-name=org.wiimotedev.deviceEvents
+  - --talk-name=org.mpris.MediaPlayer2.Player
   - --own-name=org.mpris.MediaPlayer2.clementine
 cleanup:
   - /include
@@ -47,8 +55,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/protobuf-all-3.7.1.tar.gz
-        sha256: c10ef8d8ad5a9e5f850483051b7f9ee2c8bb3ca2e0e16a4cf105bd1321afb2d6
+        url: https://github.com/protocolbuffers/protobuf/releases/download/v3.9.0/protobuf-all-3.9.0.tar.gz
+        sha256: 3fd2faf435246a60537b7ad7a2d273df2eecad5cf76f812529dbde7183b2e6b7
     cleanup:
       - /bin
 
@@ -146,6 +154,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
-        commit: 3b76fa62752f25b445ee2a71f02c0c9d7581735a
+        commit: 75f18dab23f0842713a4200a7e362efd51b12e31
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
