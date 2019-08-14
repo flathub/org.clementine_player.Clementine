@@ -19,7 +19,7 @@ finish-args:
   - --filesystem=/run/media
   - --system-talk-name=org.freedesktop.Avahi
   - --talk-name=org.freedesktop.Notifications
-  - --talk-name=org.freedesktop.UDisks2
+  - --system-talk-name=org.freedesktop.UDisks2
   - --talk-name=org.gnome.SettingsDaemon.MediaKeys
   - --talk-name=org.wiimotedev.deviceEvents
   - --talk-name=org.mpris.MediaPlayer2.Player
