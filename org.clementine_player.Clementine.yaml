@@ -167,6 +167,14 @@ modules:
   - name: clementine
     builddir: true
     buildsystem: cmake-ninja
+    modules:
+      - name: appdata
+        buildsystem: simple
+        build-commands:
+          - install -t "${FLATPAK_DEST}/share/appdata" -Dm644 org.clementine_player.Clementine.appdata.xml
+        sources:
+          - type: file
+            path: org.clementine_player.Clementine.appdata.xml
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
