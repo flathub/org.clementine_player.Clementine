@@ -5,7 +5,6 @@ sdk: org.kde.Sdk
 command: clementine
 rename-desktop-file: clementine.desktop
 rename-icon: clementine
-rename-appdata-file: clementine.appdata.xml
 finish-args:
   - --share=ipc
   - --socket=x11
