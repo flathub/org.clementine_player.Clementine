@@ -46,8 +46,8 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.bz2
-        sha256: 59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722
+        url: https://dl.bintray.com/boostorg/release/1.73.0/source/boost_1_73_0.tar.bz2
+        sha256: 4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402
 
   - name: protobuf
     config-opts:
@@ -67,8 +67,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: https://github.com/acoustid/chromaprint/releases/download/v1.4.3/chromaprint-1.4.3.tar.gz
-        sha256: ea18608b76fb88e0203b7d3e1833fb125ce9bb61efe22c6e169a50c52c457f82
+        url: https://github.com/acoustid/chromaprint/releases/download/v1.5.0/chromaprint-1.5.0.tar.gz
+        sha256: 573a5400e635b3823fc2394cfa7a217fbb46e8e50ecebd4a61991451a8af766a
 
   - name: libcdio
     config-opts:
@@ -175,6 +175,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
-        commit: 88131ec5f98f81581e58520c6c85d91943f2e09a
+        commit: cb64d970505342e152655af7c71a6c98e53a61a5
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
