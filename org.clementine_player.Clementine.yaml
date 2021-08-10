@@ -47,8 +47,13 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://dl.bintray.com/boostorg/release/1.74.0/source/boost_1_74_0.tar.bz2
-        sha256: 83bfc1507731a0906e387fc28b7ef5417d591429e51e788417fe9ff025e116b1
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2
+        sha256: f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41
+        x-checker-data:
+          type: anitya
+          project-id: 6845
+          stable-only: true
+          url-template: https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2
 
   - name: protobuf
     config-opts:
@@ -58,6 +63,11 @@ modules:
       - type: archive
         url: https://github.com/protocolbuffers/protobuf/archive/v3.13.0.tar.gz
         sha256: 9b4ee22c250fe31b16f1a24d61467e40780a3fbb9b91c3b65be2a376ed913a1a
+        x-checker-data:
+          type: anitya
+          project-id: 3715
+          stable-only: true
+          url-template: https://github.com/protocolbuffers/protobuf/archive/v$version.tar.gz
     cleanup:
       - /bin
 
@@ -70,6 +80,11 @@ modules:
       - type: archive
         url: https://github.com/acoustid/chromaprint/releases/download/v1.5.0/chromaprint-1.5.0.tar.gz
         sha256: 573a5400e635b3823fc2394cfa7a217fbb46e8e50ecebd4a61991451a8af766a
+        x-checker-data:
+          type: anitya
+          project-id: 286
+          stable-only: true
+          url-template: https://github.com/acoustid/chromaprint/releases/download/v$version/chromaprint-$version.tar.gz
 
   - name: libcdio
     config-opts:
@@ -85,6 +100,11 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/libcdio/libcdio-2.1.0.tar.bz2
         sha256: 8550e9589dbd594bfac93b81ecf129b1dc9d0d51e90f9696f1b2f9b2af32712b
+        x-checker-data:
+          type: anitya
+          project-id: 1573
+          stable-only: true
+          url-template: https://ftp.gnu.org/gnu/libcdio/libcdio-$version.tar.bz2
     cleanup:
       - /bin
 
@@ -100,6 +120,11 @@ modules:
       - type: archive
         url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_2_0.tar.gz
         sha256: e3bcd48a62739ad179ad8064b523346abb53767bcbefc01fe37303412292343e
+        x-checker-data:
+          type: anitya
+          project-id: 14487
+          stable-only: true
+          url-template: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_${major}_${minor}_$patch.tar.gz
       - type: file
         path: patches/libcrypto++.pc
 
@@ -111,6 +136,11 @@ modules:
       - type: archive
         url: http://taglib.github.io/releases/taglib-1.11.1.tar.gz
         sha256: b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
+        x-checker-data:
+          type: anitya
+          project-id: 1982
+          stable-only: true
+          url-template: http://taglib.github.io/releases/taglib-$version.tar.gz
     cleanup:
       - /bin
 
@@ -129,16 +159,31 @@ modules:
           - type: archive
             url: https://github.com/flavio/qjson/archive/0.9.0.tar.gz
             sha256: e812617477f3c2bb990561767a4cd8b1d3803a52018d4878da302529552610d4
+            x-checker-data:
+              type: anitya
+              project-id: 12719
+              stable-only: true
+              url-template: https://github.com/flavio/qjson/archive/$version.tar.gz
     sources:
       - type: archive
         url: https://github.com/gpodder/libmygpo-qt/archive/1.1.0.tar.gz
         sha256: 2eab976efbbdd39bae1b436e7dcd2ddffd35241432094f29b69308840a938459
+        x-checker-data:
+          type: anitya
+          project-id: 1671
+          stable-only: true
+          url-template: https://github.com/gpodder/libmygpo-qt/archive/$version.tar.gz
 
   - name: sparsehash
     sources:
       - type: archive
         url: https://github.com/sparsehash/sparsehash/archive/sparsehash-2.0.4.tar.gz
         sha256: 8cd1a95827dfd8270927894eb77f62b4087735cbede953884647f16c521c7e58
+        x-checker-data:
+          type: anitya
+          project-id: 4863
+          stable-only: true
+          url-template: https://github.com/sparsehash/sparsehash/archive/sparsehash-$version.tar.gz
 
   - name: liblastfm
     buildsystem: cmake-ninja
@@ -146,6 +191,11 @@ modules:
       - type: archive
         url: "https://github.com/lastfm/liblastfm/archive/1.1.0.tar.gz"
         sha256: f61f0daa384e081a8f2bd2f7a2148babff22696e5b72ecdac86940a10100b1c8
+        x-checker-data:
+          type: anitya
+          project-id: 1651
+          stable-only: true
+          url-template: https://github.com/lastfm/liblastfm/archive/$version.tar.gz
 
   - name: clementine
     builddir: true
@@ -161,6 +211,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
-        commit: 598f840078ecd7c00daf7c41d4a8bbda6cf83291
+        tag: 1.4.0rc1-697-gcddc08e14
+        commit: cddc08e148e77a91b6afe3cf0d5306519052a177
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
