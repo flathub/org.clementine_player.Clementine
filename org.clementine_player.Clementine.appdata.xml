@@ -55,11 +55,11 @@
 	<project_license>GPL-3.0+</project_license>
 	<developer_name>David Sansome, John Maguire &amp; Arnaud Bienner</developer_name>
 	<screenshots>
-		<screenshot type="default">
-			<image type="source">https://screenshots.debian.net/screenshots/000/016/533/original.png</image>
+		<screenshot type="default" width="1139" height="724">
+			<image type="source">https://clementine-player.github.io/pages/images/screenshots/clementine-1.2-1.png</image>
 		</screenshot>
-		<screenshot>
-			<image type="source">https://screenshots.debian.net/screenshots/000/016/534/original.png</image>
+		<screenshot width="1080" height="724">
+			<image type="source">https://clementine-player.github.io/pages/images/screenshots/clementine-1.2-2.png</image>
 		</screenshot>
 	</screenshots>
 	<update_contact>sakcheen+flathub_AT_gmail.com</update_contact>
