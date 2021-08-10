@@ -3,8 +3,6 @@ runtime: org.kde.Platform
 runtime-version: '5.15'
 sdk: org.kde.Sdk
 command: clementine
-rename-desktop-file: clementine.desktop
-rename-icon: clementine
 finish-args:
   - --share=ipc
   - --socket=x11
