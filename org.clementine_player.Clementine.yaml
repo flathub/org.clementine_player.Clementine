@@ -59,8 +59,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v3.13.0.tar.gz
-        sha256: 9b4ee22c250fe31b16f1a24d61467e40780a3fbb9b91c3b65be2a376ed913a1a
+        url: https://github.com/protocolbuffers/protobuf/archive/v3.17.3.tar.gz
+        sha256: c6003e1d2e7fefa78a3039f19f383b4f3a61e81be8c19356f85b6461998ad3db
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -116,8 +116,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_2_0.tar.gz
-        sha256: e3bcd48a62739ad179ad8064b523346abb53767bcbefc01fe37303412292343e
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_5_0.tar.gz
+        sha256: 8f64cf09cf4f61d5d74bca53574b8cc9959186cc0f072a2e6597e4999d6ad5db
         x-checker-data:
           type: anitya
           project-id: 14487
@@ -132,8 +132,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: http://taglib.github.io/releases/taglib-1.11.1.tar.gz
-        sha256: b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b
+        url: http://taglib.github.io/releases/taglib-1.12.tar.gz
+        sha256: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
         x-checker-data:
           type: anitya
           project-id: 1982
@@ -187,7 +187,7 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: "https://github.com/lastfm/liblastfm/archive/1.1.0.tar.gz"
+        url: https://github.com/lastfm/liblastfm/archive/1.1.0.tar.gz
         sha256: f61f0daa384e081a8f2bd2f7a2148babff22696e5b72ecdac86940a10100b1c8
         x-checker-data:
           type: anitya
