@@ -4,8 +4,8 @@ prefix=/app
 libdir=${prefix}/lib
 includedir=${prefix}/include
 
-Name: libcrypto++-8.5.0
+Name: libcrypto++-8.6.0
 Description: Class library of cryptographic schemes
-Version: 8.5.0
+Version: 8.6.0
 Libs: -L${libdir} -lcryptopp
 Cflags: -I${includedir}
