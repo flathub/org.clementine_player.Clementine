@@ -59,8 +59,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v3.18.0.tar.gz
-        sha256: 14e8042b5da37652c92ef6a2759e7d2979d295f60afd7767825e3de68c856c54
+        url: https://github.com/protocolbuffers/protobuf/archive/v3.19.0.tar.gz
+        sha256: 4a045294ec76cb6eae990a21adb5d8b3c78be486f1507faa601541d1ccefbd6b
         x-checker-data:
           type: anitya
           project-id: 3715
