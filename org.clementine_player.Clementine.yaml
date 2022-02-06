@@ -185,6 +185,8 @@ modules:
 
   - name: liblastfm
     buildsystem: cmake-ninja
+    build-options:
+        cxxflags: -std=c++14
     sources:
       - type: archive
         url: https://github.com/lastfm/liblastfm/archive/1.1.0.tar.gz
@@ -198,14 +200,8 @@ modules:
   - name: clementine
     builddir: true
     buildsystem: cmake-ninja
-    modules:
-      - name: appdata
-        buildsystem: simple
-        build-commands:
-          - install -t "${FLATPAK_DEST}/share/appdata" -Dm644 org.clementine_player.Clementine.appdata.xml
-        sources:
-          - type: file
-            path: org.clementine_player.Clementine.appdata.xml
+    post-install:
+      - install -Dm644 -t "${FLATPAK_DEST}/share/appdata" ../org.clementine_player.Clementine.appdata.xml
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
@@ -213,3 +209,5 @@ modules:
         commit: cddc08e148e77a91b6afe3cf0d5306519052a177
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
+      - type: file
+        path: org.clementine_player.Clementine.appdata.xml
