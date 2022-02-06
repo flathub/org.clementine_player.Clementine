@@ -201,7 +201,7 @@ modules:
     builddir: true
     buildsystem: cmake-ninja
     post-install:
-      - install -Dm644 -t "${FLATPAK_DEST}/share/appdata" ../org.clementine_player.Clementine.appdata.xml
+      - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
