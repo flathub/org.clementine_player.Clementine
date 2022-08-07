@@ -59,8 +59,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v3.20.1.tar.gz
-        sha256: 8b28fdd45bab62d15db232ec404248901842e5340299a57765e48abe8a80d930
+        url: https://github.com/protocolbuffers/protobuf/archive/v21.4.tar.gz
+        sha256: 990e47a163b4057f98b899eca591981b5b735872b58f59b9ead9cecabbb21a2a
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -116,8 +116,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_6_0.tar.gz
-        sha256: 9304625f4767a13e0a5f26d0f019d78cf9375604a33e5391c3bf2e81399dfeb8
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_7_0.tar.gz
+        sha256: 8d6a4064b8e9f34cd3e838f5a12c40067ee7b95ee37d9173ec273cb0913e7ca2
         x-checker-data:
           type: anitya
           project-id: 14487
