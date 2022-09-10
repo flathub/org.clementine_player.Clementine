@@ -205,8 +205,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/clementine-player/Clementine.git
-        tag: 1.4.0rc1-697-gcddc08e14
-        commit: cddc08e148e77a91b6afe3cf0d5306519052a177
+        tag: 1.4.0rc1-848-g39124eda3
+        commit: 39124eda3831ff3b817eb2466f951b471c6863cf
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
       - type: file
