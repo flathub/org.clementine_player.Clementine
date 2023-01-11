@@ -5,7 +5,8 @@ sdk: org.kde.Sdk
 command: clementine
 finish-args:
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --device=dri
   - --share=network
@@ -22,6 +23,7 @@ finish-args:
   - --own-name=org.mpris.MediaPlayer2.clementine
   - --talk-name=org.kde.StatusNotifierWatcher
   - --own-name=org.kde.StatusNotifierItem-2-2
+  - --own-name=org.kde.*
 cleanup:
   - /include
   - /lib/cmake
