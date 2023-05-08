@@ -45,8 +45,8 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
-        sha256: 475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2
+        sha256: a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -59,8 +59,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v3.20.1.tar.gz
-        sha256: 8b28fdd45bab62d15db232ec404248901842e5340299a57765e48abe8a80d930
+        url: https://github.com/protocolbuffers/protobuf/archive/v23.0.tar.gz
+        sha256: b8faf8487cc364e5c2b47a9abd77512bc79a6389ea45392ca938ba7617eae877
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -116,8 +116,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_6_0.tar.gz
-        sha256: 9304625f4767a13e0a5f26d0f019d78cf9375604a33e5391c3bf2e81399dfeb8
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_7_0.tar.gz
+        sha256: 8d6a4064b8e9f34cd3e838f5a12c40067ee7b95ee37d9173ec273cb0913e7ca2
         x-checker-data:
           type: anitya
           project-id: 14487
@@ -132,8 +132,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: http://taglib.github.io/releases/taglib-1.12.tar.gz
-        sha256: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
+        url: http://taglib.github.io/releases/taglib-1.13.tar.gz
+        sha256: 58f08b4db3dc31ed152c04896ee9172d22052bc7ef12888028c01d8b1d60ade0
         x-checker-data:
           type: anitya
           project-id: 1982
