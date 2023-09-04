@@ -45,8 +45,8 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
-        sha256: 475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2
+        sha256: 6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -132,8 +132,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: http://taglib.github.io/releases/taglib-1.12.tar.gz
-        sha256: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
+        url: http://taglib.github.io/releases/taglib-1.13.1.tar.gz
+        sha256: c8da2b10f1bfec2cd7dbfcd33f4a2338db0765d851a50583d410bacf055cfd0b
         x-checker-data:
           type: anitya
           project-id: 1982
