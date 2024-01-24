@@ -45,8 +45,8 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.bz2
-        sha256: 475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.bz2
+        sha256: cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -59,8 +59,8 @@ modules:
       - --with-pic
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v3.20.1.tar.gz
-        sha256: 8b28fdd45bab62d15db232ec404248901842e5340299a57765e48abe8a80d930
+        url: https://github.com/protocolbuffers/protobuf/archive/v25.2.tar.gz
+        sha256: 8ff511a64fc46ee792d3fe49a5a1bcad6f7dc50dfbba5a28b0e5b979c17f9871
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -116,8 +116,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_6_0.tar.gz
-        sha256: 9304625f4767a13e0a5f26d0f019d78cf9375604a33e5391c3bf2e81399dfeb8
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_9_0.tar.gz
+        sha256: ab5174b9b5c6236588e15a1aa1aaecb6658cdbe09501c7981ac8db276a24d9ab
         x-checker-data:
           type: anitya
           project-id: 14487
@@ -132,8 +132,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: http://taglib.github.io/releases/taglib-1.12.tar.gz
-        sha256: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
+        url: http://taglib.github.io/releases/taglib-2.0.tar.gz
+        sha256: e36ea877a6370810b97d84cf8f72b1e4ed205149ab3ac8232d44c850f38a2859
         x-checker-data:
           type: anitya
           project-id: 1982
