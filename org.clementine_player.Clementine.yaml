@@ -208,6 +208,8 @@ modules:
         tag: 1.4.0rc1-697-gcddc08e14
         commit: cddc08e148e77a91b6afe3cf0d5306519052a177
       - type: patch
+        path: patches/icon-size.patch
+      - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
       - type: file
         path: org.clementine_player.Clementine.appdata.xml

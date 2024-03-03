@@ -1,0 +1,25 @@
+From 807d7f80b38bebdab886ed99dd0ce88cc06fdae3 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Sun, 3 Mar 2024 12:24:54 +0530
+Subject: [PATCH] Make icon square
+
+---
+ data/icon.svg | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/icon.svg b/data/icon.svg
+index d77d513dc..1bb25175b 100644
+--- a/data/icon.svg
++++ b/data/icon.svg
+@@ -11,7 +11,7 @@
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    width="43.521561"
+-   height="38.635509"
++   height="43.521561"
+    id="svg2843"
+    version="1.1"
+    inkscape:version="0.47 r22583"
+-- 
+2.44.0
+
