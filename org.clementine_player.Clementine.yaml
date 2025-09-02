@@ -35,7 +35,18 @@ modules:
   - shared-modules/glew/glew.json
   - shared-modules/glu/glu-9.json
   - shared-modules/linux-audio/fftw3f.json
-
+  - name: libmtp
+    config-opts:
+      - --disable-static
+      - --with-udev=/app/lib/udev
+    sources:
+      - type: archive
+        url: https://github.com/libmtp/libmtp/releases/download/v1.1.22/libmtp-1.1.22.tar.gz
+        sha256: c3fcf411aea9cb9643590cbc9df99fa5fe30adcac695024442973d76fa5f87bc
+        x-checker-data:
+          type: anitya
+          project-id: 10017
+          url-template: https://github.com/libmtp/libmtp/releases/download/v$version/libmtp-$version.tar.gz
   - name: boost
     buildsystem: simple
     build-commands:
