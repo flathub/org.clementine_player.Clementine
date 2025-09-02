@@ -35,6 +35,7 @@ modules:
   - shared-modules/glew/glew.json
   - shared-modules/glu/glu-9.json
   - shared-modules/linux-audio/fftw3f.json
+  - shared-modules/libusb/libusb.json
   - name: libmtp
     config-opts:
       - --disable-static
