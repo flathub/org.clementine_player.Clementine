@@ -4,24 +4,24 @@ runtime-version: 5.15-24.08
 sdk: org.kde.Sdk
 command: clementine
 finish-args:
-  - --share=ipc
-  - --socket=x11
-  - --socket=pulseaudio
   - --device=dri
-  - --share=network
-  - --filesystem=xdg-music
-  - --filesystem=/mnt
   - --filesystem=/media
+  - --filesystem=/mnt
   - --filesystem=/run/media
-  - --system-talk-name=org.freedesktop.Avahi
-  - --talk-name=org.freedesktop.Notifications
-  - --system-talk-name=org.freedesktop.UDisks2
-  - --talk-name=org.gnome.SettingsDaemon.MediaKeys
-  - --talk-name=org.wiimotedev.deviceEvents
-  - --talk-name=org.mpris.MediaPlayer2.Player
-  - --own-name=org.mpris.MediaPlayer2.clementine
-  - --talk-name=org.kde.StatusNotifierWatcher
+  - --filesystem=xdg-music
   - --own-name=org.kde.StatusNotifierItem-2-2
+  - --own-name=org.mpris.MediaPlayer2.clementine
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --system-talk-name=org.freedesktop.Avahi
+  - --system-talk-name=org.freedesktop.UDisks2
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=org.mpris.MediaPlayer2.Player
+  - --talk-name=org.wiimotedev.deviceEvents
 cleanup:
   - /include
   - /lib/cmake
@@ -36,7 +36,19 @@ modules:
   - shared-modules/glew/glew.json
   - shared-modules/glu/glu-9.json
   - shared-modules/linux-audio/fftw3f.json
-
+  - shared-modules/libusb/libusb.json
+  - name: libmtp
+    config-opts:
+      - --disable-static
+      - --with-udev=/app/lib/udev
+    sources:
+      - type: archive
+        url: https://github.com/libmtp/libmtp/releases/download/v1.1.22/libmtp-1.1.22.tar.gz
+        sha256: c3fcf411aea9cb9643590cbc9df99fa5fe30adcac695024442973d76fa5f87bc
+        x-checker-data:
+          type: anitya
+          project-id: 10017
+          url-template: https://github.com/libmtp/libmtp/releases/download/v$version/libmtp-$version.tar.gz
   - name: boost
     buildsystem: simple
     build-commands:
@@ -102,7 +114,7 @@ modules:
           type: anitya
           project-id: 1573
           stable-only: true
-          url-template: https://ftp.gnu.org/gnu/libcdio/libcdio-$version.tar.bz2
+          url-template: https://github.com/libcdio/libcdio/releases/download/$version/libcdio-$version.tar.bz2
     cleanup:
       - /bin
 
