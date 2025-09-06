@@ -212,19 +212,19 @@ modules:
   - name: clementine
     builddir: true
     buildsystem: cmake-ninja
+    config-opts:
+      - -DFORCE_GIT_REVISION:STRING=1.4.1-50-ge281c4508
     post-install:
       - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
-      - type: git
-        url: https://github.com/clementine-player/Clementine.git
-        tag: 1.4.0rc1-697-gcddc08e14
-        commit: cddc08e148e77a91b6afe3cf0d5306519052a177
+      - type: archive
+        url: https://github.com/clementine-player/Clementine/releases/download/1.4.1-50-ge281c4508/clementine-1.4.1-50-ge281c4508.tar.xz
+        sha256: 56eda8b93d0fed8c1b7b7a41d1a880c8aa31050b57d9aa3302f095c51a2aacc3
         x-checker-data:
           type: anitya
           project-id: 295
           stable-only: true
           url-template: https://github.com/clementine-player/Clementine/releases/download/$version/clementine-$version.tar.xz
-
       - type: patch
         path: patches/icon-size.patch
       - type: patch
