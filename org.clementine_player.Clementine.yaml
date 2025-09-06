@@ -219,6 +219,12 @@ modules:
         url: https://github.com/clementine-player/Clementine.git
         tag: 1.4.0rc1-697-gcddc08e14
         commit: cddc08e148e77a91b6afe3cf0d5306519052a177
+        x-checker-data:
+          type: anitya
+          project-id: 295
+          stable-only: true
+          url-template: https://github.com/clementine-player/Clementine/releases/download/$version/clementine-$version.tar.xz
+
       - type: patch
         path: patches/icon-size.patch
       - type: patch
