@@ -1,0 +1,25 @@
+From 491460851037c700c6f914a999cd686eace415c7 Mon Sep 17 00:00:00 2001
+From: Justin Zobel <justin.zobel@gmail.com>
+Date: Fri, 31 Oct 2025 11:14:09 +1030
+Subject: [PATCH] Remove CMP0053 policy from CMake
+
+---
+ CMakeLists.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 48b55f4..d78853f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,8 +1,6 @@
+ cmake_minimum_required(VERSION 3.13.0)
+ project(clementine)
+ 
+-cmake_policy(SET CMP0053 OLD)
+-
+ include(CheckCXXCompilerFlag)
+ include(FindPkgConfig)
+ include(cmake/C++11Compat.cmake)
+-- 
+2.51.0
+

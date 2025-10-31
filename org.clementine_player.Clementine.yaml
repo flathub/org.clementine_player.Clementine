@@ -66,9 +66,9 @@ modules:
           url-template: https://archives.boost.io/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2
 
   - name: protobuf
+    buildsystem: cmake-ninja
     config-opts:
-      - --with-zlib
-      - --with-pic
+      - -Dprotobuf_BUILD_TESTS=OFF
     sources:
       - type: archive
         url: https://github.com/protocolbuffers/protobuf/archive/v33.0.tar.gz
@@ -159,21 +159,6 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DBUILD_SHARED_LIBS=ON
-    modules:
-      - name: qjson
-        buildsystem: cmake-ninja
-        config-opts:
-          - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-          - -DBUILD_SHARED_LIBS=ON
-        sources:
-          - type: archive
-            url: https://github.com/flavio/qjson/archive/0.9.0.tar.gz
-            sha256: e812617477f3c2bb990561767a4cd8b1d3803a52018d4878da302529552610d4
-            x-checker-data:
-              type: anitya
-              project-id: 12719
-              stable-only: true
-              url-template: https://github.com/flavio/qjson/archive/$version.tar.gz
     sources:
       - type: archive
         url: https://github.com/gpodder/libmygpo-qt/archive/1.2.0.tar.gz
@@ -197,6 +182,8 @@ modules:
 
   - name: liblastfm
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     build-options:
       cxxflags: -std=c++14
     sources:
@@ -214,6 +201,7 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DFORCE_GIT_REVISION:STRING=1.4.1-50-ge281c4508
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     post-install:
       - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
@@ -229,5 +217,11 @@ modules:
         path: patches/icon-size.patch
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
+      - type: patch
+        path: patches/0001-Remove-CMP0053-policy-from-CMake.patch
+      - type: patch
+        path: patches/0001-Remove-CMP0005-from-libprojectm-CMakeLists.txt.patch
+      - type: patch
+        path: patches/0001-Remove-CMP0017-from-libprojectm-CMakeLists.txt.patch
       - type: file
         path: org.clementine_player.Clementine.appdata.xml
