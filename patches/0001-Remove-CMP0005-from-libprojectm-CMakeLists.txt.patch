@@ -1,0 +1,25 @@
+From c43ebb41bd60693457c479c3651f5ec3d31d52cc Mon Sep 17 00:00:00 2001
+From: Justin Zobel <justin.zobel@gmail.com>
+Date: Fri, 31 Oct 2025 11:48:07 +1030
+Subject: [PATCH] Remove CMP0005 from libprojectm CMakeLists.txt
+
+---
+ 3rdparty/libprojectm/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/3rdparty/libprojectm/CMakeLists.txt b/3rdparty/libprojectm/CMakeLists.txt
+index a70f8a2..8f184bb 100644
+--- a/3rdparty/libprojectm/CMakeLists.txt
++++ b/3rdparty/libprojectm/CMakeLists.txt
+@@ -4,7 +4,7 @@ SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "The projectM core library.")
+ 
+ include(CheckCXXCompilerFlag)
+ 
+-cmake_policy(SET CMP0005 OLD)
++cmake_policy(SET CMP0005 NEW)
+ 
+ # This policy was only added in cmake 2.8.4
+ if (CMAKE_VERSION VERSION_GREATER "2.8.3")
+-- 
+2.51.0
+

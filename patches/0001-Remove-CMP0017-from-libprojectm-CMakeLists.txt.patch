@@ -1,0 +1,29 @@
+From 6dc080e5d88a0f50b97f4f2ba94c26db30a980c7 Mon Sep 17 00:00:00 2001
+From: Justin Zobel <justin.zobel@gmail.com>
+Date: Fri, 31 Oct 2025 11:50:36 +1030
+Subject: [PATCH] Remove CMP0017 from libprojectm CMakeLists.txt
+
+---
+ 3rdparty/libprojectm/CMakeLists.txt | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/3rdparty/libprojectm/CMakeLists.txt b/3rdparty/libprojectm/CMakeLists.txt
+index 8f184bb..b102aed 100644
+--- a/3rdparty/libprojectm/CMakeLists.txt
++++ b/3rdparty/libprojectm/CMakeLists.txt
+@@ -6,12 +6,6 @@ include(CheckCXXCompilerFlag)
+ 
+ cmake_policy(SET CMP0005 NEW)
+ 
+-# This policy was only added in cmake 2.8.4
+-if (CMAKE_VERSION VERSION_GREATER "2.8.3")
+-  cmake_policy(SET CMP0017 OLD)
+-endif (CMAKE_VERSION VERSION_GREATER "2.8.3")
+-
+-
+ set(USE_DEVIL OFF)
+ set(USE_FBO ON)
+ set(USE_FTGL OFF)
+-- 
+2.51.0
+

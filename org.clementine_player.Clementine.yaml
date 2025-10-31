@@ -1,6 +1,6 @@
 app-id: org.clementine_player.Clementine
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-25.08
 sdk: org.kde.Sdk
 command: clementine
 finish-args:
@@ -66,13 +66,13 @@ modules:
           url-template: https://archives.boost.io/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2
 
   - name: protobuf
+    buildsystem: cmake-ninja
     config-opts:
-      - --with-zlib
-      - --with-pic
+      - -Dprotobuf_BUILD_TESTS=OFF
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v3.20.1.tar.gz
-        sha256: 8b28fdd45bab62d15db232ec404248901842e5340299a57765e48abe8a80d930
+        url: https://github.com/protocolbuffers/protobuf/archive/v33.0.tar.gz
+        sha256: b6b03fbaa3a90f3d4f2a3fa4ecc41d7cd0326f92fcc920a7843f12206c8d52cd
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -88,8 +88,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: https://github.com/acoustid/chromaprint/releases/download/v1.5.1/chromaprint-1.5.1.tar.gz
-        sha256: a1aad8fa3b8b18b78d3755b3767faff9abb67242e01b478ec9a64e190f335e1c
+        url: https://github.com/acoustid/chromaprint/releases/download/v1.6.0/chromaprint-1.6.0.tar.gz
+        sha256: 9d33482e56a1389a37a0d6742c376139fa43e3b8a63d29003222b93db2cb40da
         x-checker-data:
           type: anitya
           project-id: 286
@@ -108,8 +108,8 @@ modules:
       - --disable-static
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/libcdio/libcdio-2.1.0.tar.bz2
-        sha256: 8550e9589dbd594bfac93b81ecf129b1dc9d0d51e90f9696f1b2f9b2af32712b
+        url: https://github.com/libcdio/libcdio/releases/download/2.2.0/libcdio-2.2.0.tar.bz2
+        sha256: 6f8fbdf4d189cf63f2a7a1549c516cd720c7b222c7aaadbc924a26e745a48539
         x-checker-data:
           type: anitya
           project-id: 1573
@@ -128,8 +128,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/lib/pkgconfig/" libcrypto++.pc
     sources:
       - type: archive
-        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_6_0.tar.gz
-        sha256: 9304625f4767a13e0a5f26d0f019d78cf9375604a33e5391c3bf2e81399dfeb8
+        url: https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_9_0.tar.gz
+        sha256: ab5174b9b5c6236588e15a1aa1aaecb6658cdbe09501c7981ac8db276a24d9ab
         x-checker-data:
           type: anitya
           project-id: 14487
@@ -144,8 +144,8 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: http://taglib.github.io/releases/taglib-1.12.tar.gz
-        sha256: 7fccd07669a523b07a15bd24c8da1bbb92206cb19e9366c3692af3d79253b703
+        url: http://taglib.github.io/releases/taglib-2.1.1.tar.gz
+        sha256: 3716d31f7c83cbf17b67c8cf44dd82b2a2f17e6780472287a16823e70305ddba
         x-checker-data:
           type: anitya
           project-id: 1982
@@ -159,25 +159,10 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DBUILD_SHARED_LIBS=ON
-    modules:
-      - name: qjson
-        buildsystem: cmake-ninja
-        config-opts:
-          - -DCMAKE_BUILD_TYPE=RelWithDebInfo
-          - -DBUILD_SHARED_LIBS=ON
-        sources:
-          - type: archive
-            url: https://github.com/flavio/qjson/archive/0.9.0.tar.gz
-            sha256: e812617477f3c2bb990561767a4cd8b1d3803a52018d4878da302529552610d4
-            x-checker-data:
-              type: anitya
-              project-id: 12719
-              stable-only: true
-              url-template: https://github.com/flavio/qjson/archive/$version.tar.gz
     sources:
       - type: archive
-        url: https://github.com/gpodder/libmygpo-qt/archive/1.1.0.tar.gz
-        sha256: 2eab976efbbdd39bae1b436e7dcd2ddffd35241432094f29b69308840a938459
+        url: https://github.com/gpodder/libmygpo-qt/archive/1.2.0.tar.gz
+        sha256: 71d6461939be14c044d1688bd3381cb3a724c0acb292d34fe63b9c677a4d2247
         x-checker-data:
           type: anitya
           project-id: 1671
@@ -197,6 +182,8 @@ modules:
 
   - name: liblastfm
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     build-options:
       cxxflags: -std=c++14
     sources:
@@ -214,12 +201,13 @@ modules:
     buildsystem: cmake-ninja
     config-opts:
       - -DFORCE_GIT_REVISION:STRING=1.4.1-50-ge281c4508
+      - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     post-install:
       - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/clementine-player/Clementine/releases/download/1.4.1-50-ge281c4508/clementine-1.4.1-50-ge281c4508.tar.xz
-        sha256: 56eda8b93d0fed8c1b7b7a41d1a880c8aa31050b57d9aa3302f095c51a2aacc3
+        url: https://github.com/clementine-player/Clementine/releases/download/1.4.1-58-gbae968a2f/clementine-1.4.1-58-gbae968a2f.tar.xz
+        sha256: 484a05b3bf4ad6ccd2dcabccfb5e29ae0752bf53cc8be99fdf6c0b92573f54e4
         x-checker-data:
           type: anitya
           project-id: 295
@@ -229,5 +217,11 @@ modules:
         path: patches/icon-size.patch
       - type: patch
         path: patches/clementine.save_playlists_to_xdg-config-home.patch
+      - type: patch
+        path: patches/0001-Remove-CMP0053-policy-from-CMake.patch
+      - type: patch
+        path: patches/0001-Remove-CMP0005-from-libprojectm-CMakeLists.txt.patch
+      - type: patch
+        path: patches/0001-Remove-CMP0017-from-libprojectm-CMakeLists.txt.patch
       - type: file
         path: org.clementine_player.Clementine.appdata.xml
