@@ -33,10 +33,10 @@ cleanup:
   - /lib/*.a
   - /lib/*.la
 modules:
-  - shared-modules/glew/glew.json
-  - shared-modules/glu/glu-9.json
-  - shared-modules/linux-audio/fftw3f.json
-  - shared-modules/libusb/libusb.json
+  - glew.json
+  - glu-9.json
+  - fftwf3.json
+  - libusb.json
   - name: libmtp
     config-opts:
       - --disable-static
