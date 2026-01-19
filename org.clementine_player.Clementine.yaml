@@ -57,8 +57,8 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2
-        sha256: 85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a
+        url: https://archives.boost.io/release/1.90.0/source/boost_1_90_0.tar.bz2
+        sha256: 49551aff3b22cbc5c5a9ed3dbc92f0e23ea50a0f7325b0d198b705e8ee3fc305
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -71,8 +71,8 @@ modules:
       - -Dprotobuf_BUILD_TESTS=OFF
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v33.0.tar.gz
-        sha256: b6b03fbaa3a90f3d4f2a3fa4ecc41d7cd0326f92fcc920a7843f12206c8d52cd
+        url: https://github.com/protocolbuffers/protobuf/archive/v33.4.tar.gz
+        sha256: 136a07aad488cc502b11c4416fe4a7df2dfdea1d0833a7a8211000bf952728ba
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -108,8 +108,8 @@ modules:
       - --disable-static
     sources:
       - type: archive
-        url: https://github.com/libcdio/libcdio/releases/download/2.2.0/libcdio-2.2.0.tar.bz2
-        sha256: 6f8fbdf4d189cf63f2a7a1549c516cd720c7b222c7aaadbc924a26e745a48539
+        url: https://github.com/libcdio/libcdio/releases/download/2.3.0/libcdio-2.3.0.tar.bz2
+        sha256: 53e83d284667535a767fd2d31edad1a6701591960459df373a10f1f21e80a7ed
         x-checker-data:
           type: anitya
           project-id: 1573
@@ -206,8 +206,8 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/clementine-player/Clementine/releases/download/1.4.1-58-gbae968a2f/clementine-1.4.1-58-gbae968a2f.tar.xz
-        sha256: 484a05b3bf4ad6ccd2dcabccfb5e29ae0752bf53cc8be99fdf6c0b92573f54e4
+        url: https://github.com/clementine-player/Clementine/releases/download/1.4.1-60-g1a3e8b56f/clementine-1.4.1-60-g1a3e8b56f.tar.xz
+        sha256: 8296048cd2c38ff7143678b2db7743cde2abd6f8fefa89239630a79a595f1c86
         x-checker-data:
           type: anitya
           project-id: 295
