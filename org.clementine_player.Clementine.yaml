@@ -135,7 +135,7 @@ modules:
     builddir: true
     buildsystem: cmake-ninja
     config-opts:
-      - -DFORCE_GIT_REVISION:STRING=1.4.3
+      - -DFORCE_GIT_REVISION:STRING=1.4.3-0-g983839830
     post-install:
       - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
