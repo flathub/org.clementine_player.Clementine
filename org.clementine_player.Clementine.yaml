@@ -42,12 +42,13 @@ modules:
       - --with-udev=/app/lib/udev
     sources:
       - type: archive
-        url: https://github.com/libmtp/libmtp/releases/download/v1.1.22/libmtp-1.1.22.tar.gz
-        sha256: c3fcf411aea9cb9643590cbc9df99fa5fe30adcac695024442973d76fa5f87bc
+        url: https://github.com/libmtp/libmtp/releases/download/v1.1.23/libmtp-1.1.23.tar.gz
+        sha256: 74a2b6e8cb4a0304e95b995496ea3ac644c29371649b892b856e22f12a0bdeed
         x-checker-data:
           type: anitya
           project-id: 10017
-          url-template: https://github.com/libmtp/libmtp/releases/download/v$version/libmtp-$version.tar.gz
+          url-template: 
+            https://github.com/libmtp/libmtp/releases/download/v$version/libmtp-$version.tar.gz
   - name: boost
     buildsystem: simple
     build-commands:
@@ -56,13 +57,14 @@ modules:
       - cp -r boost "${FLATPAK_DEST}/include/boost"
     sources:
       - type: archive
-        url: https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2
-        sha256: 85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a
+        url: https://archives.boost.io/release/1.92.0/source/boost_1_92_0.tar.bz2
+        sha256: 5c1d40cb8e19adbf740a4ec2da35b3e58f3f5804b1dce44deb53df72193cbc6c
         x-checker-data:
           type: anitya
           project-id: 6845
           stable-only: true
-          url-template: https://archives.boost.io/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2
+          url-template: 
+            https://archives.boost.io/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2
 
   - name: protobuf
     buildsystem: cmake-ninja
@@ -70,8 +72,8 @@ modules:
       - -Dprotobuf_BUILD_TESTS=OFF
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/archive/v33.0.tar.gz
-        sha256: b6b03fbaa3a90f3d4f2a3fa4ecc41d7cd0326f92fcc920a7843f12206c8d52cd
+        url: https://github.com/protocolbuffers/protobuf/archive/v36.2.tar.gz
+        sha256: 7e7eaf580ec77f1a392ff1ab1013c13d3b04a6716f002f697f67f3c1113f0530
         x-checker-data:
           type: anitya
           project-id: 3715
@@ -87,13 +89,15 @@ modules:
       - -DBUILD_SHARED_LIBS=ON
     sources:
       - type: archive
-        url: https://github.com/acoustid/chromaprint/releases/download/v1.6.0/chromaprint-1.6.0.tar.gz
-        sha256: 9d33482e56a1389a37a0d6742c376139fa43e3b8a63d29003222b93db2cb40da
+        url: 
+          https://github.com/acoustid/chromaprint/releases/download/v1.6.2/chromaprint-1.6.2.tar.gz
+        sha256: d54ada62c16b2db396d3251ec54fc7a58909c163131a1cfcf7fa6407dbc14360
         x-checker-data:
           type: anitya
           project-id: 286
           stable-only: true
-          url-template: https://github.com/acoustid/chromaprint/releases/download/v$version/chromaprint-$version.tar.gz
+          url-template: 
+            https://github.com/acoustid/chromaprint/releases/download/v$version/chromaprint-$version.tar.gz
 
   - name: libcdio
     config-opts:
@@ -113,7 +117,8 @@ modules:
           type: anitya
           project-id: 1573
           stable-only: true
-          url-template: https://github.com/libcdio/libcdio/releases/download/$version/libcdio-$version.tar.bz2
+          url-template: 
+            https://github.com/libcdio/libcdio/releases/download/$version/libcdio-$version.tar.bz2
     cleanup:
       - /bin
 
@@ -140,13 +145,15 @@ modules:
       - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
       - type: archive
-        url: https://github.com/clementine-player/Clementine/releases/download/1.4.3/clementine-1.4.3.tar.xz
-        sha256: d68b3218db435bf858a09b889c3223bef1e63bcebd849b18a11ce9ede23cee82
+        url: 
+          https://github.com/clementine-player/Clementine/releases/download/1.4.4/clementine-1.4.4.tar.xz
+        sha256: 85d479ce53f9e6ba7a2d7270019c7395b175b8638c1883298d6004061808f9c9
         x-checker-data:
           type: json
           url: https://api.github.com/repos/clementine-player/Clementine/releases/latest
           version-query: .tag_name
-          url-query: .assets[] | select(.name == "clementine-" + $version + ".tar.xz") | .browser_download_url
+          url-query: .assets[] | select(.name == "clementine-" + $version + ".tar.xz")
+            | .browser_download_url
           timestamp-query: .published_at
           is-main-source: true
       - type: file
