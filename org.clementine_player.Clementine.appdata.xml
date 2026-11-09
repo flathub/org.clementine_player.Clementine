@@ -45,8 +45,12 @@
 	<url type="faq">https://github.com/clementine-player/Clementine/wiki/Frequently-asked-questions</url>
 	<launchable type="desktop-id">org.clementine_player.Clementine.desktop</launchable>
 	<releases>
-		<release version="1.4.4" date="2026-11-02">
+		<release version="1.4.5" date="2026-11-09">
+			<url type="details">https://github.com/clementine-player/Clementine/releases/tag/1.4.5</url>
 			<description></description>
+		</release>
+		<release version="1.4.4" date="2026-11-02">
+			<description/>
 		</release>
 		<release version="1.4.3" date="2026-10-26"/>
 		<release version="1.4.0rc2" date="2020-04-23"/>
