@@ -144,8 +144,8 @@ modules:
     sources:
       - type: archive
         url: 
-          https://github.com/clementine-player/Clementine/releases/download/1.4.6/clementine-1.4.6.tar.xz
-        sha256: d1a76ffb11995da57bd6c03d1d66d9197a273038b02dbed5f946e3b00ad6b354
+          https://github.com/clementine-player/Clementine/releases/download/1.4.7/clementine-1.4.7.tar.xz
+        sha256: bcbb9f93072ef7e519384bb423bf8df7889cf7e15ba157371234c44025eb88ad
         x-checker-data:
           type: json
           url: https://api.github.com/repos/clementine-player/Clementine/releases/latest
