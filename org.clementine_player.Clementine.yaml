@@ -139,8 +139,6 @@ modules:
   - name: clementine
     builddir: true
     buildsystem: cmake-ninja
-    post-install:
-      - install -Dm644 -t "${FLATPAK_DEST}/share/metainfo" ../org.clementine_player.Clementine.appdata.xml
     sources:
       - type: archive
         url: 
@@ -154,5 +152,3 @@ modules:
             | .browser_download_url
           timestamp-query: .published_at
           is-main-source: true
-      - type: file
-        path: org.clementine_player.Clementine.appdata.xml
